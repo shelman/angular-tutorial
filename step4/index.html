@@ -6,8 +6,6 @@
         function PlaylistCtrl($scope) {
           $scope.currentSong = 'Brown Eyed Women';
           $scope.playlist = [];
-          $scope.currentName = '';
-          $scope.savedPlaylists = [];
 
           $scope.addSong = function() {
             $scope.playlist.push($scope.currentSong);
@@ -16,16 +14,6 @@
 
           $scope.removeSong = function(song) {
             $scope.playlist.splice($scope.playlist.indexOf(song), 1);
-          }
-
-          $scope.savePlaylist = function() {
-            $scope.savedPlaylists.push({
-              name: $scope.currentName,
-              playlist: $scope.playlist
-            });
-            $scope.currentSong = '';
-            $scope.playlist = [];
-            $scope.currentName = '';
           }
         }
       </script>
@@ -36,20 +24,10 @@
       <div ng-controller="PlaylistCtrl">
         <input type="text" ng-model="currentSong"></input> 
         <button type="button" ng-click="addSong()">Add</button>
-        <br>
-        <input type="text" ng-model="currentName"></input>
-        <button type="button" ng-click="savePlaylist()">Save</button> 
 
         <ul>
           <li ng-repeat="song in playlist">
             {{ song }} <button type="button" ng-click="removeSong(song)">Remove</button>
-          </li>
-        </ul>
-        
-        <ul ng-repeat="savedPlaylist in savedPlaylists">
-          <h2>{{ savedPlaylist.name }}</h2>
-          <li ng-repeat="song in savedPlaylist.playlist">
-            {{ song }}
           </li>
         </ul>
 

@@ -46,12 +46,7 @@
           </li>
         </ul>
         
-        <ul ng-repeat="savedPlaylist in savedPlaylists">
-          <h2>{{ savedPlaylist.name }}</h2>
-          <li ng-repeat="song in savedPlaylist.playlist">
-            {{ song }}
-          </li>
-        </ul>
+        <h2 ng-repeat="savedPlaylist in savedPlaylists">{{ savedPlaylist.name }}</h2>
 
       </div>
 

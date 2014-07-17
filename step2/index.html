@@ -1,0 +1,23 @@
+<html>
+
+    <head>
+      <script type="text/javascript" src="angular.js"></script>
+      <script type="text/javascript">
+        function PlaylistCtrl($scope) {
+          $scope.greeting = 'Hello';
+          $scope.name = 'Sam';
+        }
+      </script>
+    </head>
+
+    <body ng-app>
+
+      <div ng-controller="PlaylistCtrl">
+        <input type="text" ng-model="greeting"></input> 
+        <input type="text" ng-model="name"></input> 
+        {{ greeting }} {{ name }}
+      </div>
+
+    </body>
+
+</html>

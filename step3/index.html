@@ -1,0 +1,28 @@
+<html>
+
+    <head>
+      <script type="text/javascript" src="angular.js"></script>
+      <script type="text/javascript">
+        function PlaylistCtrl($scope) {
+          $scope.currentSong = 'Brown Eyed Women';
+          $scope.playlist = [];
+
+          $scope.addSong = function() {
+            $scope.playlist.push($scope.currentSong);
+            $scope.currentSong = '';
+          }
+        }
+      </script>
+    </head>
+
+    <body ng-app>
+
+      <div ng-controller="PlaylistCtrl">
+        <input type="text" ng-model="currentSong"></input> 
+        <button type="button" ng-click="addSong()">Add</button>
+        {{ playlist }}
+      </div>
+
+    </body>
+
+</html>
