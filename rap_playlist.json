@@ -1,0 +1,11 @@
+{
+    name: 'Rap Music',
+    playlist: [
+        'Forgot About Dre', 
+        'Can I Kick It?', 
+        'Sunday',
+        'Ready to Die',
+        'Money Trees',
+        'Guns and Cigarettes',
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    name: 'Folk Music',
+    playlist: [
+        'Bruised Orange',
+        'Naked As We Came',
+        'Fair Thee Well',
+        'Late July',
+        'Vitamin L'
+    ]
+}

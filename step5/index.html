@@ -40,13 +40,15 @@
         <input type="text" ng-model="currentName"></input>
         <button type="button" ng-click="savePlaylist()">Save</button> 
 
+        <h2>New Playlist</h2>
         <ul>
           <li ng-repeat="song in playlist">
             {{ song }} <button type="button" ng-click="removeSong(song)">Remove</button>
           </li>
         </ul>
         
-        <h2 ng-repeat="savedPlaylist in savedPlaylists">{{ savedPlaylist.name }}</h2>
+        <h2>Saved Playlists</h2>
+        <h3 ng-repeat="savedPlaylist in savedPlaylists">{{ savedPlaylist.name }}</h3>
 
       </div>
 

@@ -1,0 +1,10 @@
+{
+    name: 'Classical Music',
+    playlist: [
+        'Rite of Spring',
+        'Pictures At An Exhibition',
+        'Stars and Stripes Forever',
+        'Beethoven's 5th',
+        'Scheherezade'
+    ]
+}
