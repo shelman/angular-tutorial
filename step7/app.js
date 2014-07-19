@@ -1,4 +1,4 @@
-function PlaylistCtrl($scope, $filter) {
+function PlaylistCtrl($scope) {
   $scope.currentSong = 'Brown Eyed Women';
   $scope.playlist = [];
   $scope.currentName = '';
@@ -20,7 +20,6 @@ function PlaylistCtrl($scope, $filter) {
       name: $scope.currentName,
       playlist: $scope.playlist
     });
-    $scope.savedPlaylists = $filter('orderBy')($scope.savedPlaylists, 'name');
     $scope.currentSong = '';
     $scope.playlist = [];
     $scope.currentName = '';
