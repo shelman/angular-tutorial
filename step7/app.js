@@ -1,5 +1,5 @@
 function PlaylistCtrl($scope) {
-  $scope.currentSong = 'Brown Eyed Women';
+  $scope.currentSong = 'Wish You Were Here';
   $scope.playlist = [];
   $scope.currentName = '';
   $scope.savedPlaylists = [];

@@ -1,6 +1,6 @@
 angular.module('playlistMaker', []).
     controller('PlaylistCtrl', function($scope, $filter, $http) {
-      $scope.currentSong = 'Brown Eyed Women';
+      $scope.currentSong = 'Wish You Were Here';
       $scope.playlist = [];
       $scope.currentName = '';
       $scope.savedPlaylists = [];
