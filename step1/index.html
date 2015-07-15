@@ -1,19 +1,21 @@
 <html>
 
     <head>
-      <script type="text/javascript" src="angular.js"></script>
-      <script type="text/javascript">
+	<script type="text/javascript" src="angular.js"></script>
+	<script type="text/javascript">
+        var app = angular.module('tutorial', []);
+        app.controller('PlaylistCtrl', PlaylistCtrl);
         function PlaylistCtrl($scope) {
-          $scope.greeting = new Date();
+            $scope.greeting = new Date(); 
         }
-      </script>
+	</script>
     </head>
 
-    <body ng-app>
+    <body ng-app="tutorial">
 
-      <div ng-controller="PlaylistCtrl">
-        {{ greeting }} 
-      </div>
+        <div ng-controller="PlaylistCtrl">
+            {{ greeting }}
+        </div>
 
     </body>
 
