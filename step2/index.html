@@ -1,22 +1,24 @@
 <html>
 
     <head>
-      <script type="text/javascript" src="angular.js"></script>
-      <script type="text/javascript">
+	<script type="text/javascript" src="angular.js"></script>
+	<script type="text/javascript">
+        var app = angular.module('tutorial', []);
+        app.controller('PlaylistCtrl', PlaylistCtrl);
         function PlaylistCtrl($scope) {
-          $scope.greeting = 'Hello';
-          $scope.name = 'Sam';
+            $scope.greeting = 'Hello';
+            $scope.name = 'Sam';
         }
-      </script>
+	</script>
     </head>
 
-    <body ng-app>
+    <body ng-app="tutorial">
 
-      <div ng-controller="PlaylistCtrl">
-        <input type="text" ng-model="greeting"></input> 
-        <input type="text" ng-model="name"></input> 
-        {{ greeting }} {{ name }}
-      </div>
+        <div ng-controller="PlaylistCtrl">
+            <input type="text" ng-model="greeting"></input>
+            <input type="text" ng-model="name"></input>
+            {{ greeting }} {{ name }}
+        </div>
 
     </body>
 
