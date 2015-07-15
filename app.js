@@ -1,6 +1,6 @@
 var app = angular.module('tutorial', []);
 app.controller('PlaylistCtrl', PlaylistCtrl);
-function PlaylistCtrl($scope) {
+function PlaylistCtrl($scope, $filter) {
     $scope.currentSong = ''; 
     $scope.playlist = [];
     $scope.currentName = '';
@@ -21,6 +21,7 @@ function PlaylistCtrl($scope) {
             name: $scope.currentName,
             playlist: $scope.playlist
         });
+        $scope.savedPlaylists = $filter('orderBy')($scope.savedPlaylists, 'name');
         $scope.currentSong = '';
         $scope.playlist = [];
         $scope.currentName = '';

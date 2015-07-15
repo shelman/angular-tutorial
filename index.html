@@ -23,7 +23,7 @@
             </ul>
 
             <h2>Saved Playlists</h2>
-            <h3 ng-repeat="savedPlaylist in savedPlaylists | orderBy:'name'"
+            <h3 ng-repeat="savedPlaylist in savedPlaylists"
                 ng-click="setCurrentPlaylist(savedPlaylist)">
                 {{ savedPlaylist.name }}
             </h3>
