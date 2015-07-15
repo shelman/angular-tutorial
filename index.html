@@ -6,8 +6,13 @@
         var app = angular.module('tutorial', []);
         app.controller('PlaylistCtrl', PlaylistCtrl);
         function PlaylistCtrl($scope) {
-            $scope.greeting = 'Hello';
-            $scope.name = 'Sam';
+            $scope.currentSong = ''; 
+            $scope.playlist = [];
+
+            $scope.addSong = function() {
+                $scope.playlist.push($scope.currentSong);  
+                $scope.currentSong = '';
+            };
         }
 	</script>
     </head>
@@ -15,9 +20,9 @@
     <body ng-app="tutorial">
 
         <div ng-controller="PlaylistCtrl">
-            <input type="text" ng-model="greeting"></input>
-            <input type="text" ng-model="name"></input>
-            {{ greeting }} {{ name }}
+            <input type="text" ng-model="currentSong"></input>
+            <button type="button" ng-click="addSong()">Add</button>
+            {{ playlist }}
         </div>
 
     </body>
