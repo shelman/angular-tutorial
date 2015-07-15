@@ -13,6 +13,11 @@
                 $scope.playlist.push($scope.currentSong);  
                 $scope.currentSong = '';
             };
+
+            $scope.removeSong = function(song) {
+                $scope.playlist.splice($scope.playlist.indexOf(song), 1);
+            };
+
         }
 	</script>
     </head>
@@ -22,7 +27,12 @@
         <div ng-controller="PlaylistCtrl">
             <input type="text" ng-model="currentSong"></input>
             <button type="button" ng-click="addSong()">Add</button>
-            {{ playlist }}
+
+            <ul>
+                <li ng-repeat="song in playlist">
+                    {{ song }} <button type="button" ng-click="removeSong(song)">Remove</button>
+                </li>
+            </ul>
         </div>
 
     </body>
