@@ -1,58 +1,61 @@
 <html>
 
     <head>
-      <script type="text/javascript" src="angular.js"></script>
-      <script type="text/javascript">
+	<script type="text/javascript" src="angular.js"></script>
+	<script type="text/javascript">
+        var app = angular.module('tutorial', []);
+        app.controller('PlaylistCtrl', PlaylistCtrl);
         function PlaylistCtrl($scope) {
-          $scope.currentSong = 'Wish You Were Here';
-          $scope.playlist = [];
-          $scope.currentName = '';
-          $scope.savedPlaylists = [];
-
-          $scope.addSong = function() {
-            $scope.playlist.push($scope.currentSong);
-            $scope.currentSong = '';
-          }
-
-          $scope.removeSong = function(song) {
-            $scope.playlist.splice($scope.playlist.indexOf(song), 1);
-          }
-
-          $scope.savePlaylist = function() {
-            $scope.savedPlaylists.push({
-              name: $scope.currentName,
-              playlist: $scope.playlist
-            });
-            $scope.currentSong = '';
+            $scope.currentSong = ''; 
             $scope.playlist = [];
             $scope.currentName = '';
-          }
+            $scope.savedPlaylists = [];
+
+            $scope.addSong = function() {
+                $scope.playlist.push($scope.currentSong);  
+                $scope.currentSong = '';
+            };
+
+            $scope.removeSong = function(song) {
+                $scope.playlist.splice($scope.playlist.indexOf(song), 1);
+            };
+
+            $scope.savePlaylist = function() {
+                $scope.savedPlaylists.push({
+                    name: $scope.currentName,
+                    playlist: $scope.playlist
+                });
+                $scope.currentSong = '';
+                $scope.playlist = [];
+                $scope.currentName = '';
+            };
+
         }
-      </script>
+	</script>
     </head>
 
-    <body ng-app>
+    <body ng-app="tutorial">
 
-      <div ng-controller="PlaylistCtrl">
-        <input type="text" ng-model="currentSong"></input> 
-        <button type="button" ng-click="addSong()">Add</button>
-        <br>
-        <input type="text" ng-model="currentName"></input>
-        <button type="button" ng-click="savePlaylist()">Save</button> 
+        <div ng-controller="PlaylistCtrl">
+            <input type="text" ng-model="currentSong"></input>
+            <button type="button" ng-click="addSong()">Add</button>
+            <br>
+            <input type="text" ng-model="currentName"></input>
+            <button type="button" ng-click="savePlaylist()">Save</button>
 
-        <h2>New Playlist</h2>
-        <ul>
-          <li ng-repeat="song in playlist">
-            {{ song }} <button type="button" ng-click="removeSong(song)">Remove</button>
-          </li>
-        </ul>
-        
-        <h2>Saved Playlists</h2>
-        <h3 ng-repeat="savedPlaylist in savedPlaylists">
-          {{ savedPlaylist.name }}
-        </h3>
+            <h2>New Playlist</h2>
+            <ul>
+                <li ng-repeat="song in playlist">
+                    {{ song }} <button type="button" ng-click="removeSong(song)">Remove</button>
+                </li>
+            </ul>
 
-      </div>
+            <h2>Saved Playlists</h2>
+            <h3 ng-repeat="savedPlaylist in savedPlaylists">
+                {{ savedPlaylist.name }}
+            </h3>
+
+        </div>
 
     </body>
 
