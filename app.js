@@ -1,6 +1,6 @@
 var app = angular.module('tutorial', []);
 app.controller('PlaylistCtrl', PlaylistCtrl);
-function PlaylistCtrl($scope, $filter) {
+function PlaylistCtrl($scope, $filter, $http) {
     $scope.currentSong = ''; 
     $scope.playlist = [];
     $scope.currentName = '';
@@ -28,7 +28,27 @@ function PlaylistCtrl($scope, $filter) {
     };
 
     $scope.setCurrentPlaylist = function(playlist) {
-        $scope.currentPlaylist = playlist;
+        $http.get('/' + playlist.file).
+            success(function(data) {
+                playlist.playlist = data.playlist;
+                $scope.currentPlaylist = playlist;
+            }).
+            error(function(data) {
+                console.log('Error fetching playlist');
+            });
     };
+
+    $http.get('playlists.json').
+        success(function(data) {
+            data.forEach(function(playlistInfo) {
+                $scope.savedPlaylists.push({
+                    name: playlistInfo.name,
+                    file: playlistInfo.file
+                });
+            });
+        }).
+        error(function() {
+            console.log('Error fetching playlists');
+        });
 
 }
