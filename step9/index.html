@@ -17,8 +17,8 @@
 
             <h2>New Playlist</h2>
             <ul>
-                <li ng-repeat="song in playlist">
-                    {{ song }} <button type="button" ng-click="removeSong(song)">Remove</button>
+                <li ng-repeat="song in playlist track by $index">
+                    {{ song }} <button type="button" ng-click="removeSong($index)">Remove</button>
                 </li>
             </ul>
 

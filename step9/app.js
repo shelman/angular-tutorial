@@ -12,8 +12,8 @@ function PlaylistCtrl($scope, $filter, $http) {
         $scope.currentSong = '';
     };
 
-    $scope.removeSong = function(song) {
-        $scope.playlist.splice($scope.playlist.indexOf(song), 1);
+    $scope.removeSong = function(index) {
+        $scope.playlist.splice(index, 1);
     };
 
     $scope.savePlaylist = function() {

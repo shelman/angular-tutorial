@@ -14,8 +14,8 @@
                 $scope.currentSong = '';
             };
 
-            $scope.removeSong = function(song) {
-                $scope.playlist.splice($scope.playlist.indexOf(song), 1);
+            $scope.removeSong = function(index) {
+                $scope.playlist.splice(index, 1);
             };
 
         }
@@ -29,8 +29,8 @@
             <button type="button" ng-click="addSong()">Add</button>
 
             <ul>
-                <li ng-repeat="song in playlist">
-                    {{ song }} <button type="button" ng-click="removeSong(song)">Remove</button>
+                <li ng-repeat="song in playlist track by $index">
+                    {{ song }} <button type="button" ng-click="removeSong($index)">Remove</button>
                 </li>
             </ul>
         </div>
